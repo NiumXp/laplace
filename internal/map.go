@@ -41,7 +41,7 @@ func (m *Map) RandomOpenPosition() *Position {
 		y := uint(rand.Intn(h))
 
 		if t[y][x] == NULL {
-			return &Position{x, y}
+			return NewPosition(x, y)
 		}
 	}
 }

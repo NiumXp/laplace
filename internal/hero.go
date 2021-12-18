@@ -7,6 +7,6 @@ type Hero struct {
 	Bombs   uint8
 	Range   uint8
 
-	Batery bool
-	Mana   bool
+	Baterry bool
+	Mana    bool
 }

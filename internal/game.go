@@ -11,6 +11,8 @@ func NewGame(m *Map, h []*Hero) *Game {
 	return &Game{
 		Map:   m,
 		Heros: h,
+
+		states: make(map[uint]*State),
 	}
 }
 

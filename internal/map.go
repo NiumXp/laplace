@@ -18,6 +18,7 @@ const (
 
 type Map [][]uint
 
+// NewMap creates a new map with the given width and height.
 func NewMap(width, height uint) *Map {
 	m := make(Map, height)
 
@@ -28,6 +29,7 @@ func NewMap(width, height uint) *Map {
 	return &m
 }
 
+// RandomOpenPosition returns a random open position (NULL) on the map.
 func (m *Map) RandomOpenPosition() *Position {
 	t := (*m)
 
@@ -44,10 +46,11 @@ func (m *Map) RandomOpenPosition() *Position {
 	}
 }
 
+// RandomOpenPositions returns a slice of `n` random open positions (NULL) on the map.
 func (m *Map) RandomOpenPositions(n int) []*Position {
 	positions := make([]*Position, n)
 
-	for i := range positions {
+	for i := 0; i < n; i++ {
 		positions[i] = m.RandomOpenPosition()
 	}
 

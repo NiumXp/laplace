@@ -1,6 +1,9 @@
 package internal
 
-import "math/rand"
+import (
+	"fmt"
+	"math/rand"
+)
 
 const (
 	NULL = iota
@@ -16,6 +19,10 @@ const (
 
 type Map [][]uint
 type Position [2]uint
+
+func (p *Position) String() string {
+	return fmt.Sprintf("(%d, %d)", p[0], p[1])
+}
 
 func NewMap(width, height uint) *Map {
 	m := make(Map, height)

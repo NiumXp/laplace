@@ -2,20 +2,27 @@ package internal
 
 import "fmt"
 
+// State represents a state of the game.
 type State struct {
 	Instant uint
 	Map     *Map
-	Heros   []*Position
+	Heroes  []*Position
 }
 
+// NewState creates a new state with the given instant, map and heroes.
 func NewState(instant uint, m *Map, p []*Position) *State {
 	return &State{
 		Instant: instant,
 		Map:     m,
-		Heros:   p,
+		Heroes:  p,
 	}
 }
 
+// String returns a string representation of the state.
 func (s *State) String() string {
-	return fmt.Sprintf("State{Instant: %d}", s.Instant)
+	return fmt.Sprintf(
+		"State{\n\tInstant: %d,\n\tHeros: %v,\n}",
+		s.Instant,
+		s.Heroes,
+	)
 }

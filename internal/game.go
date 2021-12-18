@@ -1,16 +1,16 @@
 package internal
 
 type Game struct {
-	Map   *Map
-	Heros []*Hero
+	Map    *Map
+	Heroes []*Hero
 
 	states map[uint]*State
 }
 
 func NewGame(m *Map, h []*Hero) *Game {
 	return &Game{
-		Map:   m,
-		Heros: h,
+		Map:    m,
+		Heroes: h,
 
 		states: make(map[uint]*State),
 	}
@@ -22,7 +22,7 @@ func (g *Game) StateAt(instant uint) *State {
 	}
 
 	m := g.Map
-	h := g.Heros
+	h := g.Heroes
 
 	if instant == 0 {
 		state := NewState(
